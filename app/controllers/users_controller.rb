@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_base_scope
+  before_action :set_user, :set_base_scope
 
   def index
     follower_counts  = Follow.where(following_user_id: @base_scope.pluck(:id)).group(:following_user_id).count
@@ -16,18 +16,23 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = if params[:user_id].present?
+              User.find_by(id: params[:user_id])
+            else
+              current_user
+            end
+    return if @user.present?
+    render json: { error: true, message: "User not found!"}, status: :not_found
+  end
+
   def set_base_scope
-    user        = if params[:user_id].present?
-                    User.find_by(id: params[:user_id])
-                  else
-                    current_user
-                  end
     @base_scope = if params[:view] == 'followers'
-                    user.followers
+                    @user.followers
                   elsif params[:view] == 'followings'
-                    user.followings
+                    @user.followings
                   else
-                    user.followings
+                    @user.followings
                   end
   end
 end

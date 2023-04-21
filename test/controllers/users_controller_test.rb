@@ -16,7 +16,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_url(view: 'followings', user_id: @user.id), as: :json
     assert_response :success
     response_body = JSON.parse(response.body)
-    assert_includes response_body['data'], { id: @user2.id, name: @user2.name, sleeps: 0, followers: 1, followings: 0 }.as_json
+    assert_includes response_body['data'], { id: @user2.id, name: @user2.name, sleeps: 1, followers: 1, followings: 0 }.as_json
     assert_includes response_body['data'], { id: @user3.id, name: @user3.name, sleeps: 0, followers: 1, followings: 0 }.as_json
   end
 
@@ -25,5 +25,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     response_body = JSON.parse(response.body)
     assert_includes response_body['data'], { id: @user.id, name: @user.name, sleeps: 1, followers: 0, followings: 2 }.as_json
+  end
+
+  test "should get user not found" do
+    get users_url(view: 'followers', user_id: 12345), as: :json
+    assert_response :not_found
+    response_body = JSON.parse(response.body)
+    assert_equal true, response_body['error']
+    assert_equal 'User not found!', response_body['message']
   end
 end

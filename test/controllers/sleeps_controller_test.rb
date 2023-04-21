@@ -13,7 +13,7 @@ class SleepsControllerTest < ActionDispatch::IntegrationTest
   test "should filter sleeps by date range" do
     get sleeps_path(from: Date.today - 5.days, to: Date.today + 1.days), as: :json
     assert_response :success
-    assert_equal User.first.sleeps.where(created_at: (Date.today - 5.days)..(Date.today + 1.days)).count, Sleep.all.count
+    assert_equal User.first.sleeps.where(created_at: (Date.today - 5.days)..(Date.today + 1.days)).count, User.first.sleeps.count
   end
 
   test "should get sleep" do
@@ -62,6 +62,15 @@ class SleepsControllerTest < ActionDispatch::IntegrationTest
   test "should not destroy non-existent sleep" do
     delete sleep_path(id: "non-existent"), as: :json
     assert_response :not_found
+  end
+
+  test "should get sleep report" do
+    get sleep_reports_path, as: :json
+    assert_response :success
+    response_body = JSON.parse(response.body)
+    assert_equal users(:user_2).id, response_body['data'][0]['id']
+    assert_equal users(:user_2).name, response_body['data'][0]['name']
+    assert_equal 8.68, response_body['data'][0]['duration'].to_f
   end
 end
 

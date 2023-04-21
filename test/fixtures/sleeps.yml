@@ -2,3 +2,8 @@ sleep_1:
   start_time: '23 Apr 2023 12:05 am'
   end_time: '23 Apr 2023 6:46 am'
   user: user_1
+
+sleep_2:
+  start_time: '22 Apr 2023 10:05 pm'
+  end_time: '23 Apr 2023 6:46 am'
+  user: user_2

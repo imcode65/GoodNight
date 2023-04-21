@@ -31,6 +31,10 @@ class SleepsController < ApplicationController
     end
   end
 
+  def sleep_reports
+    @reports = current_user.followings.sleep_report
+  end
+
   private
 
   def set_sleep

@@ -17,12 +17,12 @@ class Users::FollowsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create follow" do
     assert_difference('@user.followings.count', 1) do
-      post user_follows_url(@user), params: { following_user_id: users(:user_3).id }, as: :json
+      post user_follows_url(@user), params: { following_user_id: users(:user_4).id }, as: :json
     end
 
     assert_response :success
     response_body = JSON.parse(response.body)
-    assert_equal "You started following #{users(:user_3).name}", response_body["message"]
+    assert_equal "You started following #{users(:user_4).name}", response_body["message"]
   end
 
   test "should not create follow if invalid following_user_id is provided" do
@@ -48,7 +48,7 @@ class Users::FollowsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not destroy follow if follow does not exist" do
     assert_no_difference('@user.followings.count') do
-      delete user_follow_url(@user, users(:user_3).id), as: :json
+      delete user_follow_url(@user, SecureRandom.uuid), as: :json
     end
 
     assert_response :not_found
