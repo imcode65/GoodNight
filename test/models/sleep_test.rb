@@ -2,7 +2,7 @@ require "test_helper"
 
 class SleepTest < ActiveSupport::TestCase
   def setup
-    @user = User.first
+    @user = users(:user_1)
     @sleep = Sleep.new(start_time: Time.now - 7.hour, end_time: Time.now, user: @user)
   end
 

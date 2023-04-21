@@ -1,2 +1,5 @@
 user_1:
   name: 'First User'
+
+user_2:
+  name: 'Second User'
