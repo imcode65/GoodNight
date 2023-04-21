@@ -3,3 +3,6 @@ user_1:
 
 user_2:
   name: 'Second User'
+
+user_3:
+  name: 'Third User'
