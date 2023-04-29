@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
+  include Docs::UsersControllerDocs
   before_action :set_user, :set_base_scope
+
+  def_param_group :users_record do
+    param :user_id, String, required: true, uniqueness: true
+    param :user_name, String, required: true
+    param :sleep_count, Integer, required: true
+    param :followers_count, Integer, required: true
+    param :following_count, Integer, required: true
+  end
+  api :GET, "/users", "Followers or Following users list with their details"
+  param :view, ['followers', 'followings'], required: false, desc: "Type of the view (default: view = followings)"
+  error code: 500, desc: 'Internal Server Error'
+  returns array_of: :users_record, code: 200, desc: "Users list with their sleeps, followers and followings count"
+  users_index
 
   def index
     follower_counts  = Follow.where(following_user_id: @base_scope.pluck(:id)).group(:following_user_id).count

@@ -6,8 +6,8 @@ class Users::FollowsControllerTest < ActionDispatch::IntegrationTest
     @following_user = users(:user_2)
   end
 
-  test "should get index" do
-    get user_follows_url(@user), as: :json
+  test "should get user details" do
+    get user_details_url(@user), as: :json
     assert_response :success
     response_body = JSON.parse(response.body)
     assert_equal @user.followers.count, response_body["followers"]

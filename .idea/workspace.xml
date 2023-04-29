@@ -5,23 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d0b013-1103-4433-93cb-75ff9cfc1006" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/sleeps/_sleep_report.json.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/sleeps/sleep_reports.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/concerns/docs/sleeps_controller_docs.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/concerns/docs/users/follows_controller_docs.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/concerns/docs/users_controller_docs.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/users/follows/user_details.json.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/initializers/apipie.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/sleeps_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sleeps_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users/follows_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users/follows_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/sleeps/_sleep_report.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/sleeps/_sleep_report.json.jbuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/follows/index.json.jbuilder" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/sleeps_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/sleeps_controller_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controllers/users/follows_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/users/follows_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/users_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/users_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/sleeps.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/sleeps.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Class" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,7 +60,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Rails.GoodNight">
+  <component name="RunManager" selected="Ruby.sleeps_controller">
     <configuration name="GoodNight" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="GoodNight" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -197,6 +207,29 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="sleeps_controller" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="GoodNight" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/app/controllers/sleeps_controller.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.sleeps_controller" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
@@ -212,6 +245,7 @@
       <workItem from="1681919610089" duration="12636000" />
       <workItem from="1682100712214" duration="321000" />
       <workItem from="1682101069204" duration="5465000" />
+      <workItem from="1682792273412" duration="9363000" />
     </task>
     <servers />
   </component>
